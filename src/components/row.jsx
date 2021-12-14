@@ -1,14 +1,19 @@
 import React from "react";
 
-const RowTable = (user) => {
-  console.log(user.user);
+const RowTable = ({ user }) => {
   return (
     <tr>
-      <td>{user.user.name}</td>
-      <td>{user.user.qualities.map((qual) => qual.name)}</td>
-      <td>{user.user.profession.name}</td>
-      <td>{user.user.completedMeetings}</td>
-      <td>{user.user.rate}</td>
+      <td>{user.name}</td>
+      <td>
+        {user.qualities.map((qual) => (
+          <span key={qual._id} className={`badge bg-` + qual.color}>
+            {qual.name}
+          </span>
+        ))}
+      </td>
+      <td>{user.profession.name}</td>
+      <td>{user.completedMeetings}</td>
+      <td>{user.rate}</td>
       <td>Delete</td>
     </tr>
   );
