@@ -1,14 +1,15 @@
 import React from "react";
-import api from "../API";
 
-const RowTable = () => {
-  const users = api.users.fetchAll();
+const RowTable = (user) => {
+  console.log(user.user);
   return (
     <tr>
-      <td scope="row">1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{user.user.name}</td>
+      <td>{user.user.qualities.map((qual) => qual.name)}</td>
+      <td>{user.user.profession.name}</td>
+      <td>{user.user.completedMeetings}</td>
+      <td>{user.user.rate}</td>
+      <td>Delete</td>
     </tr>
   );
 };
