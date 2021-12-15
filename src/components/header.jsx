@@ -1,9 +1,9 @@
 import React from "react";
 import CounterComponent from "./counter";
-const HeaderComponent = () => {
+const HeaderComponent = ({ users }) => {
   return (
     <h2>
-      <CounterComponent />
+      <CounterComponent users={users} />
     </h2>
   );
 };

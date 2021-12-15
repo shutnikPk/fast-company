@@ -1,6 +1,6 @@
 import React from "react";
 import RowTable from "./row";
-const TableUsers = ({ users }) => {
+const TableUsers = ({ users, handleUserDelete }) => {
   return (
     <table className="table">
       <thead>
@@ -15,7 +15,7 @@ const TableUsers = ({ users }) => {
       </thead>
       <tbody>
         {users.map((user) => (
-          <RowTable user={user} key={user._id} />
+          <RowTable handleUserDelete={handleUserDelete} user={user} key={user._id} />
         ))}
       </tbody>
     </table>

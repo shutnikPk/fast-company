@@ -2,10 +2,10 @@ import React from "react";
 import ProfessionComponent from "./profession";
 import QualityComponent from "./quality";
 
-const RowTable = ({ user }) => {
-  const deleteUserHandler = () => {
-    console.log("qq");
-  };
+const RowTable = ({ user, handleUserDelete }) => {
+  // const deleteUserHandler = () => {
+  //   console.log("qq");
+  // };
   return (
     <tr>
       <td>{user.name}</td>
@@ -23,7 +23,7 @@ const RowTable = ({ user }) => {
         <button
           type="button"
           className="btn btn-danger"
-          onClick={deleteUserHandler}
+          onClick={() => handleUserDelete(user._id)}
         >
           Delete
         </button>

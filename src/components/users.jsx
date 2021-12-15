@@ -1,8 +1,8 @@
 import React from "react";
 import TableUsers from "./table";
 
-const Users = ({ users }) => {
-  return <TableUsers users={users} />;
+const Users = ({ users, handleUserDelete }) => {
+  return <TableUsers handleUserDelete={handleUserDelete} users={users} />;
 };
 
 export default Users;
