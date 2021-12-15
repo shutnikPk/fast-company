@@ -1,6 +1,11 @@
 import React from "react";
+import CounterComponent from "./counter";
 const HeaderComponent = () => {
-  return <h1>12</h1>;
+  return (
+    <h2>
+      <CounterComponent />
+    </h2>
+  );
 };
 
 export default HeaderComponent;

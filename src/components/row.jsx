@@ -1,20 +1,33 @@
 import React from "react";
+import ProfessionComponent from "./profession";
+import QualityComponent from "./quality";
 
 const RowTable = ({ user }) => {
+  const deleteUserHandler = () => {
+    console.log("qq");
+  };
   return (
     <tr>
       <td>{user.name}</td>
       <td>
         {user.qualities.map((qual) => (
-          <span key={qual._id} className={`badge bg-` + qual.color}>
-            {qual.name}
-          </span>
+          <QualityComponent key={qual._id} qual={qual} />
         ))}
       </td>
-      <td>{user.profession.name}</td>
+      <td>
+        <ProfessionComponent prof={user.profession} />
+      </td>
       <td>{user.completedMeetings}</td>
       <td>{user.rate}</td>
-      <td>Delete</td>
+      <td>
+        <button
+          type="button"
+          className="btn btn-danger"
+          onClick={deleteUserHandler}
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   );
 };
