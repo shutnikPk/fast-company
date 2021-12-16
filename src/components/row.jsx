@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import BookmarkComponent from "./bookmark";
 import ProfessionComponent from "./profession";
 import QualityComponent from "./quality";
 
 const RowTable = ({ user, handleUserDelete }) => {
-  // const deleteUserHandler = () => {
-  //   console.log("qq");
-  // };
+  const [isFavorite, setIsFavorite] = useState(false)
+  const isFacoriteTogleHandler = () => {
+    setIsFavorite(!isFavorite)
+  }
   return (
     <tr>
       <td>{user.name}</td>
@@ -19,6 +21,7 @@ const RowTable = ({ user, handleUserDelete }) => {
       </td>
       <td>{user.completedMeetings}</td>
       <td>{user.rate}</td>
+      <td><BookmarkComponent isFacoriteTogleHandler={isFacoriteTogleHandler} isFavorite={isFavorite} /></td>
       <td>
         <button
           type="button"
