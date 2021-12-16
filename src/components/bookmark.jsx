@@ -1,6 +1,9 @@
 import React from 'react';
 const BookmarkComponent = ({ isFavorite, isFacoriteTogleHandler }) => {
-    return (<p style={{ cursor: "pointer" }} onClick={isFacoriteTogleHandler}>{isFavorite ? "Discard" : "Add"}</p>);
+    return (
+        <button className={("btn btn-") + (isFavorite ? "secondary" : "primary")} onClick={isFacoriteTogleHandler}>
+            {isFavorite ? "Discard" : "Add"}
+        </button>);
 }
 
 export default BookmarkComponent;
